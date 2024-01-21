@@ -1,7 +1,7 @@
 import numpy as np
 import csv
 
-model_path = "model.npz"
+model_path = "models/model.npz"
 
 topology = [784, 10, 15, 15]
 input_count = topology[0]
@@ -25,11 +25,14 @@ def train_network(train_name, train_count=60000):
 
     global w1, w2, w3, b1, b2, b3
 
+    print("training started")
+
     for epoch in range(epoch_count):
-        print("_______ Эпоха №", epoch, " _______")
+        print("epoch", epoch)
         train(csv_train)  # Обучение
         np.random.shuffle(csv_train)
 
+    print("training completed")
     np.savez(model_path, w1=w1, b1=b1, w2=w2, b2=b2, w3=w3, b3=b3)
 
 
@@ -67,7 +70,6 @@ def train(csv_train):
         y[int(number)][0] = 1
         y = y.reshape(1, output_count)
 
-        # Прямое распространение
         # Прямое распространение
         x = x / 255
 

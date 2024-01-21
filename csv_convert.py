@@ -4,8 +4,8 @@ import numpy as np
 
 
 def image_to_csv(path):
-    image = Image.open(path).convert('L')  # открываем картинку и переводим в черно-белый формат
-    image_array = np.array(image)  # преобразуем картинку в массив numpy
+    image = Image.open(path).convert('L')  # Открываем картинку и переводим в черно-белый формат
+    image_array = np.array(image)  # Преобразуем картинку в массив numpy
 
     df = pd.DataFrame(image_array)
 
