@@ -2,12 +2,12 @@ import telebot
 import network as nw
 import csv_convert
 from PIL import Image
+from config import TELEGRAM_TOKEN
 
 
 model_path = nw.model_path
 image_path = "image.jpg"
-token = ""
-bot = telebot.TeleBot(token)
+bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 
 @bot.message_handler(commands=["start"])
