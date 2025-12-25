@@ -2,7 +2,7 @@ import telebot
 import network as nw
 import csv_convert
 from PIL import Image
-import os
+
 
 model_path = nw.model_path
 image_path = "image.jpg"
@@ -52,7 +52,7 @@ def run(message):
     bot.send_message(message.chat.id, f"Нарисованное число: {result_number}")
 
     # Отправка сжатого изображения
-    bot.send_photo(message.chat.id, img)
+    # bot.send_photo(message.chat.id, img)
 
 
 def recognizeDigit(csv_image_name):
